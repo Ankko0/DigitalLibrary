@@ -1,0 +1,13 @@
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\DigitalLibrary.DataAccess.dll.config
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\DigitalLibrary.DataAccess.dll
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\DigitalLibrary.DataAccess.pdb
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\EntityFramework.dll
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\EntityFramework.xml
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\ru\EntityFramework.resources.dll
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.csprojAssemblyReference.cache
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.csproj.CoreCompileInputs.cache
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.csproj.CopyComplete
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.dll
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.pdb

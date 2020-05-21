@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModelContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LibaryEntity" Relationship="Self.Book_fk1" FromRole="Category" ToRole="LibaryEntity" />
+  </EntityType>
+  <EntityType Name="LibaryEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Type" Type="Int32" Nullable="false" />
+    <Property Name="ID_Category" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Pages" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Language" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.Book_fk1" FromRole="LibaryEntity" ToRole="Category" />
+    <NavigationProperty Name="Type" Relationship="Self.Book_fk0" FromRole="LibaryEntity" ToRole="Type" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LibaryEntity" Relationship="Self.Book_fk0" FromRole="Type" ToRole="LibaryEntity" />
+  </EntityType>
+  <Association Name="Book_fk1">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="LibaryEntity" Type="Self.LibaryEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LibaryEntity">
+        <PropertyRef Name="ID_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Book_fk0">
+    <End Role="Type" Type="Self.Type" Multiplicity="1" />
+    <End Role="LibaryEntity" Type="Self.LibaryEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LibaryEntity">
+        <PropertyRef Name="ID_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="LibaryEntity" EntityType="Self.LibaryEntity" />
+    <EntitySet Name="Type" EntityType="Self.Type" />
+    <AssociationSet Name="Book_fk1" Association="Self.Book_fk1">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="LibaryEntity" EntitySet="LibaryEntity" />
+    </AssociationSet>
+    <AssociationSet Name="Book_fk0" Association="Self.Book_fk0">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="LibaryEntity" EntitySet="LibaryEntity" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
