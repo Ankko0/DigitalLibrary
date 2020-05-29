@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.WebServices"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.DataAccess", "DigitalLibrary.DataAccess\DigitalLibrary.DataAccess.csproj", "{BAE5E1B1-2E16-4631-A64C-10C4ADFF85DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.Interface", "DigitalLibrary.Interface\DigitalLibrary.Interface.csproj", "{F90E6C4D-D7A5-4C96-B773-772DA210B032}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BAE5E1B1-2E16-4631-A64C-10C4ADFF85DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAE5E1B1-2E16-4631-A64C-10C4ADFF85DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAE5E1B1-2E16-4631-A64C-10C4ADFF85DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90E6C4D-D7A5-4C96-B773-772DA210B032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90E6C4D-D7A5-4C96-B773-772DA210B032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90E6C4D-D7A5-4C96-B773-772DA210B032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90E6C4D-D7A5-4C96-B773-772DA210B032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

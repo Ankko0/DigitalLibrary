@@ -126,18 +126,5 @@ namespace DigitalLibrary.WebServices.Controllers
             }
         }
 
-        /*protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool LibaryEntityExists(int id)
-        {
-            return db.LibaryEntity.Count(e => e.ID == id) > 0;
-        }*/
     }
 }

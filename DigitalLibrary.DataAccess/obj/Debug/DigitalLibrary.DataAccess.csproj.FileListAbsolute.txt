@@ -11,3 +11,4 @@ G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.Data
 G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.csproj.CopyComplete
 G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.dll
 G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\obj\Debug\DigitalLibrary.DataAccess.pdb
+G:\dotnet\DigitalLibrary\DigitalLibrary.DataAccess\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

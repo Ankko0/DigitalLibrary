@@ -19,12 +19,7 @@ namespace DigitalLibrary.DataAccess.Models
             : base(new Helper().ConnectionString)
         {
         }
-    
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }*/
-    
+
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<LibaryEntity> LibaryEntity { get; set; }
         public virtual DbSet<Type> Type { get; set; }
