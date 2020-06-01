@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DigitalLibrary.DataAccess.Models
 {
-    public class LibraryEntityDTO : INotifyPropertyChanged
+    public class LibraryEntityDTO 
     {
         
 
@@ -25,31 +25,8 @@ namespace DigitalLibrary.DataAccess.Models
         public string Type { get; set; }
         public string Category { get; set; }
 
-        public static async Task<List<LibraryEntityDTO>> GetAPIAsync(string path)
+        
 
-        {
-            List<LibraryEntityDTO> model = null;
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-
-            {
-
-                var request = await response.Content.ReadAsStringAsync();
-                model = JsonConvert.DeserializeObject<List<LibraryEntityDTO>>(request);
-
-
-            }
-
-            return model;
-
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        
     }
 }

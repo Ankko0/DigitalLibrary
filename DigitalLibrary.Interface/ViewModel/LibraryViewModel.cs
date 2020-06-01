@@ -1,4 +1,5 @@
 ﻿using DigitalLibrary.DataAccess.Models;
+using DigitalLibrary.Interface.ViewModel;
 using DigitalLibrary.Interface.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,21 @@ using System.Windows.Input;
 
 namespace DigitalLibrary.Interface.VievModel
 {
-    class LibraryViewModel : INotifyPropertyChanged
+    public class LibraryViewModel : BaseViewModel
     {
         LibraryEntityDTO Entity = new LibraryEntityDTO();
         ObservableCollection<LibraryEntityDTO> _libraryEntities = new ObservableCollection<LibraryEntityDTO>();
+        LibraryEntityDTO _libraryEntity = new LibraryEntityDTO();
         public ObservableCollection<LibraryEntityDTO> libraryEntities { get { return _libraryEntities; } }
+        public LibraryEntityDTO libraryEntity { get { return _libraryEntity; } }
         ICommand loadEntites;
-
+        ICommand loadEntityByID;
+        LibraryEntityDTO GetEntityDTO (int id )
+        {
+            loadEntityByID = new LoadByIdCommand(id);
+            loadEntityByID.Execute(_libraryEntity);
+            return _libraryEntity;
+        }
 
         public LibraryViewModel ()
         {
@@ -27,12 +36,6 @@ namespace DigitalLibrary.Interface.VievModel
             _libraryEntities = GetEntities();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string prop = "") 
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
 
         public ObservableCollection<LibraryEntityDTO> GetEntities()
         {
