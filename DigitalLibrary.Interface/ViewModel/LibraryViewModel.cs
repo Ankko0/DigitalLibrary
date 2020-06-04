@@ -16,19 +16,32 @@ namespace DigitalLibrary.Interface.VievModel
 {
     public class LibraryViewModel : BaseViewModel
     {
-        LibraryEntityDTO Entity = new LibraryEntityDTO();
         ObservableCollection<LibraryEntityDTO> _libraryEntities = new ObservableCollection<LibraryEntityDTO>();
-        LibraryEntityDTO _libraryEntity = new LibraryEntityDTO();
+
         public ObservableCollection<LibraryEntityDTO> libraryEntities { get { return _libraryEntities; } }
-        public LibraryEntityDTO libraryEntity { get { return _libraryEntity; } }
-        ICommand loadEntites;
-        ICommand loadEntityByID;
-        LibraryEntityDTO GetEntityDTO (int id )
+
+
+        public ICommand loadEntites;
+
+        LoadByIdCommand _loadEntityByID;
+        public ICommand loadEntityByID
         {
-            loadEntityByID = new LoadByIdCommand(id);
-            loadEntityByID.Execute(_libraryEntity);
-            return _libraryEntity;
+            set
+            {
+                
+            }
+            get
+            {
+                if (_loadEntityByID == null)
+                {
+                    _loadEntityByID = new LoadByIdCommand();
+                }
+
+                return _loadEntityByID;
+            }
         }
+       
+
 
         public LibraryViewModel ()
         {

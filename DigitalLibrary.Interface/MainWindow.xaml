@@ -8,14 +8,28 @@
         mc:Ignorable="d"
         Title="Digital Library"  MinWidth="800" MinHeight="500">
     <Grid>
+        
+        
         <Grid.DataContext>
             <viewmodel:LibraryViewModel/>
         </Grid.DataContext>
-
+        
         <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   >
             <TabItem Header="Список книг"  Width="Auto" >
                 <Grid Background="#FFE5E5E5"   HorizontalAlignment="Left" >
-                    <DataGrid VerticalAlignment="Stretch" Width="Auto" AutoGenerateColumns="False" ItemsSource="{Binding libraryEntities}" SelectedItem="{Binding libraryEntity}" IsReadOnly="True" >
+                    <Grid.InputBindings>
+                        <!--<MouseBinding Gesture="LeftDoubleClick" Command="{Binding Path=loadEntityByID}"
+                                      CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}, Path=PlacementTarget.SelectedItem}"
+                                           />-->
+                    </Grid.InputBindings>
+                    <DataGrid x:Name="myGrd" VerticalAlignment="Stretch" Width="Auto" AutoGenerateColumns="False" ItemsSource="{Binding libraryEntities}" SelectedItem="{Binding Path=selectedItem}" IsReadOnly="True" IsSynchronizedWithCurrentItem="True" >
+                        <DataGrid.InputBindings>
+                            <MouseBinding
+                                MouseAction="LeftDoubleClick"
+                                Command="{Binding Path=loadEntityByID}"
+                                CommandParameter="{Binding ElementName=myGrd, Path=SelectedItem}" />
+                        </DataGrid.InputBindings>
+
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Header="Название" Binding="{Binding  Path=Name}"></DataGridTextColumn>
                             <DataGridTextColumn Width="*" Header="Автор" Binding="{Binding Path=Author}"></DataGridTextColumn>
@@ -26,11 +40,7 @@
                             <DataGridTextColumn Width="*" Header="Тип" Binding="{Binding Path=Type}"></DataGridTextColumn>
                             <DataGridTextColumn Width="*" Header="Категория" Binding="{Binding Path=Category}"></DataGridTextColumn>
                         </DataGrid.Columns>
-                        <DataGrid.InputBindings>
-                            
-                            <MouseBinding Gesture="LeftDoubleClick" Command="{Binding }" 
-                                           />
-                        </DataGrid.InputBindings>
+                        
 
                     </DataGrid>
 

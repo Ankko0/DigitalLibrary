@@ -30,5 +30,23 @@ namespace DigitalLibrary.Interface.Helpers
             return model;
 
         }
+
+        public static LibraryEntityDTO GetAPIA(string path)
+
+        {
+            WebRequest request = WebRequest.Create(path);
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+            LibraryEntityDTO model = JsonConvert.DeserializeObject<LibraryEntityDTO>(reader.ReadToEnd()); ;
+
+            response.Close();
+            stream.Close();
+            reader.Close();
+
+
+            return model;
+
+        }
     }
 }

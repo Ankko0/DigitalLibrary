@@ -17,3 +17,5 @@ G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\MainWindow.g.cs
 G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\App.g.cs
 G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\MainWindow.baml
 G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\AboutWindow.g.cs
+G:\dotnet\DigitalLibrary\DigitalLibrary.Interface\obj\Debug\AboutWindow.baml
